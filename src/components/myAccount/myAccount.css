@@ -1,0 +1,63 @@
+.myAccount{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.myAccount--balance{
+    border: 1px solid black;
+    width: inherit;
+    padding: 22px 19px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.myAccount--items{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    border: 1px solid black;
+}
+.myAccount--items > div{
+    padding: 18px 15px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 0.2rem;
+}
+
+.myAccount--items > div >div:nth-child(1){
+    grid-column: 1 / 4;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 20px 15px;
+}
+.myAccount--items > div >div:nth-child(2){
+    grid-column: 4 / 5;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+}
+
+.myAccount--items > div:nth-child(1) > div{
+    background-color: rgb(59, 136, 59);
+    border-radius: 8px;
+}
+
+.myAccount--items > div:nth-child(2) > div{
+    background-color: rgb(153, 81, 81);
+    border-radius: 8px;
+}
+
+.myAccount--items > div:nth-child(3) > div{
+    background-color: rgb(156, 150, 83);
+    border-radius: 8px;
+}
