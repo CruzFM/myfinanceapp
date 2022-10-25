@@ -1,4 +1,5 @@
-import "./myAccount.css"
+import "./myAccount.css";
+import {Link} from 'react-router-dom';
 
 export const MyAccount = ()=>{
     return(
@@ -11,7 +12,9 @@ export const MyAccount = ()=>{
             <article className="myAccount--items">
                 <div>
                     <div>
-                        <h3>Incomes:</h3>
+                        <Link to='/incomes'>
+                            <h3>Incomes:</h3>
+                        </Link>
                     </div>
                     <div>
                         +
@@ -20,7 +23,9 @@ export const MyAccount = ()=>{
                 </div>
                 <div>
                     <div>
+                    <Link to='/spent'>
                         <h3>Spent:</h3>
+                    </Link>
                     </div>
                     <div>
                         +
@@ -28,7 +33,9 @@ export const MyAccount = ()=>{
                 </div>
                 <div>
                     <div>
-                        <h3>Savings:</h3>
+                        <Link to='/savings'>
+                            <h3>Savings:</h3>
+                        </Link>
                     </div>
                     <div>
                         +
