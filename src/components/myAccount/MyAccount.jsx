@@ -11,7 +11,7 @@ export const MyAccount = ()=>{
             <article className="myAccount--items">
                 <div>
                     <div>
-                        Incomes
+                        <h3>Incomes:</h3>
                     </div>
                     <div>
                         +
@@ -20,16 +20,15 @@ export const MyAccount = ()=>{
                 </div>
                 <div>
                     <div>
-                        Spent
+                        <h3>Spent:</h3>
                     </div>
                     <div>
                         +
                     </div>
-                    
                 </div>
                 <div>
                     <div>
-                        Savings
+                        <h3>Savings:</h3>
                     </div>
                     <div>
                         +
