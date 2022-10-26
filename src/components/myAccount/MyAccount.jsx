@@ -2,6 +2,7 @@ import "./myAccount.css";
 import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import Modal from "react-modal";
+import { FormAdd } from "../FormAdd/FormAdd";
 
 export const MyAccount = ()=>{
 
@@ -29,8 +30,9 @@ export const MyAccount = ()=>{
                         +
                     </div>
                     <Modal isOpen={incomesModalIsOpen}>
-                        <h2>Hola fer, soy Incomes Modal</h2>
-                        <p>sigamos laburando.</p>
+                        {/* <h2>Hola fer, soy Incomes Modal</h2>
+                        <p>sigamos laburando.</p> */}
+                        <FormAdd />
                         <button onClick={()=> setIncomesModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>
