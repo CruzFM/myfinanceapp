@@ -1,7 +1,16 @@
 import "./myAccount.css";
+import { useState } from 'react';
 import {Link} from 'react-router-dom';
+import Modal from "react-modal";
 
 export const MyAccount = ()=>{
+
+    const [incomesModalIsOpen, setIncomesModalIsOpen] = useState(false);
+
+    const [spentModalIsOpen, setSpentModalIsOpen] = useState(false);
+
+    const [savingsModalIsOpen, setSavingsModalIsOpen] = useState(false);
+
     return(
         <section className="myAccount">
             <article className="myAccount--balance">
@@ -16,10 +25,14 @@ export const MyAccount = ()=>{
                             <h3>Incomes:</h3>
                         </Link>
                     </div>
-                    <div>
+                    <div onClick={()=> setIncomesModalIsOpen(true)}>
                         +
                     </div>
-
+                    <Modal isOpen={incomesModalIsOpen}>
+                        <h2>Hola fer, soy Incomes Modal</h2>
+                        <p>sigamos laburando.</p>
+                        <button onClick={()=> setIncomesModalIsOpen(false)}>Close</button>
+                    </Modal>
                 </div>
                 <div>
                     <div>
@@ -27,9 +40,14 @@ export const MyAccount = ()=>{
                         <h3>Spent:</h3>
                     </Link>
                     </div>
-                    <div>
+                    <div onClick={()=> setSpentModalIsOpen(true)}>
                         +
                     </div>
+                    <Modal isOpen={spentModalIsOpen}>
+                        <h2>Hola fer, soy Spent Modal</h2>
+                        <p>sigamos laburando.</p>
+                        <button onClick={()=> setSpentModalIsOpen(false)}>Close</button>
+                    </Modal>
                 </div>
                 <div>
                     <div>
@@ -37,9 +55,14 @@ export const MyAccount = ()=>{
                             <h3>Savings:</h3>
                         </Link>
                     </div>
-                    <div>
+                    <div onClick={()=> setSavingsModalIsOpen(true)}>
                         +
                     </div>
+                    <Modal isOpen={savingsModalIsOpen}>
+                        <h2>Hola fer, soy Savings Modal</h2>
+                        <p>sigamos laburando.</p>
+                        <button onClick={()=> setSavingsModalIsOpen(false)}>Close</button>
+                    </Modal>
                 </div>
             </article>
         </section>
