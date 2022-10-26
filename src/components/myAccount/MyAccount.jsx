@@ -4,13 +4,40 @@ import {Link} from 'react-router-dom';
 import Modal from "react-modal";
 import { FormAdd } from "../FormAdd/FormAdd";
 
-export const MyAccount = ()=>{
+export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
 
     const [incomesModalIsOpen, setIncomesModalIsOpen] = useState(false);
 
     const [spentModalIsOpen, setSpentModalIsOpen] = useState(false);
 
     const [savingsModalIsOpen, setSavingsModalIsOpen] = useState(false);
+
+    const darkModeModal = {
+      overlay: isDarkMode === true && { backgroundColor: "black" },
+      content:
+        isDarkMode === true && 
+            {
+              backgroundColor: "rgb(45, 40, 40)",
+              color: "white",
+            }
+          ,
+    };
+
+    const incomesCategories = [
+        'Salary',
+        'Investments',
+        'Extras',
+    ]
+
+    const spentCategories = [
+        'Recurrent',
+        'Extra',
+    ]
+
+    const savingsCategories =[
+        'Vacation',
+        'Goods'
+    ]
 
     return(
         <section className="myAccount">
@@ -19,6 +46,7 @@ export const MyAccount = ()=>{
                     Balance:
                 </h2>
             </article>
+            <article onClick={handleToggleDarkMode}>{isDarkMode === true ? 'dark' : 'white'}</article>
             <article className="myAccount--items">
                 <div>
                     <div>
@@ -29,10 +57,10 @@ export const MyAccount = ()=>{
                     <div onClick={()=> setIncomesModalIsOpen(true)}>
                         +
                     </div>
-                    <Modal isOpen={incomesModalIsOpen}>
+                    <Modal isOpen={incomesModalIsOpen} style={darkModeModal} >
                         {/* <h2>Hola fer, soy Incomes Modal</h2>
                         <p>sigamos laburando.</p> */}
-                        <FormAdd />
+                        <FormAdd category={incomesCategories} nameAdd='income' />
                         <button onClick={()=> setIncomesModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>
@@ -45,9 +73,8 @@ export const MyAccount = ()=>{
                     <div onClick={()=> setSpentModalIsOpen(true)}>
                         +
                     </div>
-                    <Modal isOpen={spentModalIsOpen}>
-                        <h2>Hola fer, soy Spent Modal</h2>
-                        <p>sigamos laburando.</p>
+                    <Modal isOpen={spentModalIsOpen}  style={darkModeModal}>
+                        <FormAdd category={spentCategories} nameAdd='spending' />
                         <button onClick={()=> setSpentModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>
@@ -60,9 +87,8 @@ export const MyAccount = ()=>{
                     <div onClick={()=> setSavingsModalIsOpen(true)}>
                         +
                     </div>
-                    <Modal isOpen={savingsModalIsOpen}>
-                        <h2>Hola fer, soy Savings Modal</h2>
-                        <p>sigamos laburando.</p>
+                    <Modal isOpen={savingsModalIsOpen} style={darkModeModal}>
+                        <FormAdd category={savingsCategories} nameAdd='saving' />
                         <button onClick={()=> setSavingsModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>

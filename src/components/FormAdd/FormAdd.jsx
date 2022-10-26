@@ -19,12 +19,12 @@ export const FormAdd = (props)=> {
             <Formik
             validationSchema={addSchema}
             initialValues={{
-                amount:0,
+                amount:'',
                 category:'',
                 detail:'',
                 date: '',
             }}
-            onSubmit={values => console.log(values)}
+            onSubmit={(values) => console.log(values)}
             >
                 { 
                 ( {touched, errors} ) =>
@@ -34,6 +34,26 @@ export const FormAdd = (props)=> {
                         <Field name='amount' type='number' placeholder='Example: 777' />
                         {errors.amount && touched.amount && <div>{errors.amount}</div>}
                     </div>
+                    <div>
+                        <label htmlFor="category">Category</label>
+                        <Field name='category' as='select'>
+                            <option value=''>Categories</option>
+                            {props.category.map(category => <option value={category} key={category}>{category}</option>)}
+                        </Field>
+                        {errors.category && touched.category && <div>{errors.category}</div>}
+                    </div>
+                    <div>
+                        <label htmlFor="detail">Detail</label>
+                        <Field name='detail' type='input' placeholder='Your details here' />
+                        {errors.detail && touched.detail && <div>{errors.detail}</div>}
+                    </div>
+                    <div>
+                        <label htmlFor="date">date</label>
+                        <Field name='date' type='date'  />
+                        {errors.date && touched.date && <div>{errors.date}</div>}
+                    </div>
+                    <button type="submit">Add {props.nameAdd}</button>
+
                 </Form>)
                 }
             </Formik>
