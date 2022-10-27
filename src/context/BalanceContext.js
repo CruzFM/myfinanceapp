@@ -12,6 +12,11 @@ export function BalanceProvider( {children} ){
 
     const [incomeBalance, setIncomeBalance] = useState();
 
+    const handleAddIncome = (newIncome)=>{
+        setAllIncomes(prevIncomes => [...prevIncomes, newIncome])
+        console.log(allIncomes)
+    }
+
     //Spent
     const [allSpent, setAllSpent] = useState([]);
 
@@ -28,4 +33,30 @@ export function BalanceProvider( {children} ){
     //ademas: como no es una app con un backend, la realidad es que deberia poder setearlo en local storage. el local lo traeria. (idealmente)
     //quizas: podriamos crear las categorias de gastos como: habituales o fijos, y como variables. mismo caso con los ingresos.
     //los ahorros deberian quedar fuera del balance (quizas)
+
+    return (
+      <BalanceContext.Provider
+        value={{
+          totalBalance,
+          setTotalBalance,
+          allIncomes,
+          setAllIncomes,
+          handleAddIncome, //usado en myAccount
+          incomeBalance,
+          setIncomeBalance,
+          allSpent,
+          setAllSpent,
+          spentBalance,
+          setSpentBalance,
+          allSavings,
+          setAllSavings,
+          savingsBalance,
+          setSavingsBalance,
+        }}
+      >
+        {children}
+      </BalanceContext.Provider>
+    );
 }
+
+export default BalanceContext

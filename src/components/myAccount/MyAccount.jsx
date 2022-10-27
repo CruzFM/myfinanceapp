@@ -1,8 +1,9 @@
 import "./myAccount.css";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
 import Modal from "react-modal";
 import { FormAdd } from "../FormAdd/FormAdd";
+import BalanceContext from "../../context/BalanceContext"
 
 export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
 
@@ -39,6 +40,9 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
         'Goods'
     ]
 
+    const { setAllIncomes, allIncomes, handleAddIncome } = useContext(BalanceContext);
+
+
     return(
         <section className="myAccount">
             <article className="myAccount--balance">
@@ -58,9 +62,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                         +
                     </div>
                     <Modal isOpen={incomesModalIsOpen} style={darkModeModal} >
-                        {/* <h2>Hola fer, soy Incomes Modal</h2>
-                        <p>sigamos laburando.</p> */}
-                        <FormAdd category={incomesCategories} nameAdd='income' />
+                        <FormAdd category={incomesCategories} nameAdd='income' addNew={handleAddIncome} />
                         <button onClick={()=> setIncomesModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>
@@ -74,7 +76,11 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                         +
                     </div>
                     <Modal isOpen={spentModalIsOpen}  style={darkModeModal}>
-                        <FormAdd category={spentCategories} nameAdd='spending' />
+                        <FormAdd 
+                            category={spentCategories} 
+                            nameAdd='spending' 
+
+                        />
                         <button onClick={()=> setSpentModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>

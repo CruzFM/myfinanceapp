@@ -24,7 +24,10 @@ export const FormAdd = (props)=> {
                 detail:'',
                 date: '',
             }}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={(values) => {
+                // console.log(values)
+                props.addNew(values)
+            }}
             >
                 { 
                 ( {touched, errors} ) =>
