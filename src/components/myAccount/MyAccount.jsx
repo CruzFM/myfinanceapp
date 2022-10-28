@@ -20,8 +20,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
             {
               backgroundColor: "rgb(45, 40, 40)",
               color: "white",
-            }
-          ,
+            },
     };
 
     const incomesCategories = [
@@ -61,7 +60,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                     <div onClick={()=> setIncomesModalIsOpen(true)}>
                         +
                     </div>
-                    <Modal isOpen={incomesModalIsOpen} style={darkModeModal} >
+                    <Modal isOpen={incomesModalIsOpen} style={darkModeModal} className="modal">
                         <FormAdd category={incomesCategories} nameAdd='income' addNew={handleAddIncome} />
                         <button onClick={()=> setIncomesModalIsOpen(false)}>Close</button>
                     </Modal>
