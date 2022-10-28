@@ -16,7 +16,7 @@ export const Incomes = ()=>{
                 return(
                     <div className="card">
                         <h2>{income.date}</h2>
-                        <h3>{income.amount}</h3>
+                        <h3>${income.amount}</h3>
                         <h3>{income.category}</h3>
                         <p>{income.detail}</p>
                     </div>

@@ -22,6 +22,9 @@ export function BalanceProvider( {children} ){
 
     const [spentBalance, setSpentBalance] = useState();
 
+    const handleAddToSpent = (newSpending) =>{
+      setAllSpent( prevSpent => [...prevSpent, newSpending]);
+    }
     //Savings
     const [allSavings, setAllSavings] = useState([]);
 
@@ -48,6 +51,7 @@ export function BalanceProvider( {children} ){
           setAllSpent,
           spentBalance,
           setSpentBalance,
+          handleAddToSpent, //usado en myAccount
           allSavings,
           setAllSavings,
           savingsBalance,
