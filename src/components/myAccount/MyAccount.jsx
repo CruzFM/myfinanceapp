@@ -39,7 +39,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
         'Goods'
     ]
 
-    const { setAllIncomes, allIncomes, handleAddIncome, handleAddToSpent } = useContext(BalanceContext);
+    const { setAllIncomes, allIncomes, handleAddIncome, handleAddToSpent, handleAddtoSavings } = useContext(BalanceContext);
 
 
     return(
@@ -93,7 +93,11 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                         +
                     </div>
                     <Modal isOpen={savingsModalIsOpen} style={darkModeModal}>
-                        <FormAdd category={savingsCategories} nameAdd='saving' />
+                        <FormAdd 
+                            category={savingsCategories} 
+                            nameAdd='saving' 
+                            addNew={handleAddtoSavings}
+                            />
                         <button onClick={()=> setSavingsModalIsOpen(false)}>Close</button>
                     </Modal>
                 </div>

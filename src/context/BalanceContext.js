@@ -30,6 +30,10 @@ export function BalanceProvider( {children} ){
 
     const [savingsBalance, setSavingsBalance] = useState();
 
+    const handleAddtoSavings = (newSaving) =>{
+      setAllSavings(prevAllSavings => [...prevAllSavings, newSaving]);
+    }
+
 
     //To do: funnciones para poder crear los gastos.
     //detalle: el usuario deberia poder cargar sus gastos y estos deberian poder visualizarse en sus respectivos componentes como unas listas o cards.
@@ -54,6 +58,7 @@ export function BalanceProvider( {children} ){
           handleAddToSpent, //usado en myAccount
           allSavings,
           setAllSavings,
+          handleAddtoSavings, //usado en myAccount
           savingsBalance,
           setSavingsBalance,
         }}
