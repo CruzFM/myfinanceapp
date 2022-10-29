@@ -46,17 +46,17 @@ export function BalanceProvider( {children} ){
         value={{
           totalBalance,
           setTotalBalance,
-          allIncomes,
+          allIncomes, //usado en Incomes
           setAllIncomes,
           handleAddIncome, //usado en myAccount
           incomeBalance,
           setIncomeBalance,
-          allSpent,
+          allSpent, //usado en Spending
           setAllSpent,
           spentBalance,
           setSpentBalance,
           handleAddToSpent, //usado en myAccount
-          allSavings,
+          allSavings, //usado en Savings
           setAllSavings,
           handleAddtoSavings, //usado en myAccount
           savingsBalance,

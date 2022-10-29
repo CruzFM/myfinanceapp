@@ -43,3 +43,11 @@ video{
   background-color: rgb(25, 35, 61);
 
 } */
+
+@media screen and (min-width:760px) {
+  .card-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}

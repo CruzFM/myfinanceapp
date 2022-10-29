@@ -1,5 +1,3 @@
-import "./incomes.style.css";
-
 import { useContext } from "react"
 import BalanceContext from "../../context/BalanceContext"
 
@@ -11,15 +9,14 @@ export const Incomes = ()=>{
 
     return(
         <div>
-            
             <h1> Hola Fer, soy ingresos </h1>
-            {allIncomes.map(income => {
-                return(
-                    <>
+            <div className="card-wrap">
+                {allIncomes.map(income => {
+                    return(
                         <Card data={income} />
-                    </>
-                )
-            })}
+                    )
+                })}
+            </div>
         </div>
     )
 }
