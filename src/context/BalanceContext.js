@@ -12,10 +12,15 @@ export function BalanceProvider( {children} ){
   const [incomeBalance, setIncomeBalance] = useState(0);
 
   const handleAddIncome = (newIncome) => {
-    //Adds a new income to the existing list of incomes
+    //Adds a new income to the list of incomes
     setAllIncomes((prevIncomes) => [...prevIncomes, newIncome]);
+
     //Changes income balance. Sums every new amount into the pre-existing value
-    setIncomeBalance(prevIncomeBalance => prevIncomeBalance + newIncome.amount)
+    setIncomeBalance(prevIncomeBalance => prevIncomeBalance + newIncome.amount);
+
+
+    //TESTING
+    setTotalBalance(prevTotalBalance => prevTotalBalance + newIncome.amount);
   };
 
   //Spent
@@ -24,10 +29,17 @@ export function BalanceProvider( {children} ){
   const [spentBalance, setSpentBalance] = useState(0);
 
   const handleAddToSpent = (newSpending) => {
+    //Adds a new spending to the list of spendings
     setAllSpent((prevSpent) => [...prevSpent, newSpending]);
 
-    setSpentBalance(prevSpentBalance => prevSpentBalance + newSpending.amount)
+    //Changes spent balance. Sumbs every new amount into the pre-existing value
+    setSpentBalance(prevSpentBalance => prevSpentBalance + newSpending.amount);
+
+    //TESTING
+    setTotalBalance(prevTotalBalance=> prevTotalBalance - newSpending.amount);
   };
+
+
   //Savings
   const [allSavings, setAllSavings] = useState([]);
 
@@ -46,7 +58,7 @@ export function BalanceProvider( {children} ){
   return (
     <BalanceContext.Provider
       value={{
-        totalBalance,
+        totalBalance, //myAccount
         setTotalBalance,
 
         allIncomes, //usado en Incomes
