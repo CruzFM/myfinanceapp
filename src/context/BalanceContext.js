@@ -11,21 +11,11 @@ export function BalanceProvider( {children} ){
 
   const [incomeBalance, setIncomeBalance] = useState(0);
 
-  //Show the income balance
-  // const addToIncomeBalance = () => {
-  //   if (allIncomes.length > 0) {
-  //     let amountsOnly = [];
-  //     allIncomes.map((income) => amountsOnly.push(income.amount));
-  //     console.log(amountsOnly);
-  //     let finalBalance = amountsOnly.reduce((a, b) => a + b, 0);
-  //     setIncomeBalance(finalBalance)
-  //   }
-  // };
-
   const handleAddIncome = (newIncome) => {
+    //Adds a new income to the existing list of incomes
     setAllIncomes((prevIncomes) => [...prevIncomes, newIncome]);
+    //Changes income balance. Sums every new amount into the pre-existing value
     setIncomeBalance(prevIncomeBalance => prevIncomeBalance + newIncome.amount)
-    console.log(incomeBalance)
   };
 
   //Spent
@@ -35,6 +25,8 @@ export function BalanceProvider( {children} ){
 
   const handleAddToSpent = (newSpending) => {
     setAllSpent((prevSpent) => [...prevSpent, newSpending]);
+
+    setSpentBalance(prevSpentBalance => prevSpentBalance + newSpending.amount)
   };
   //Savings
   const [allSavings, setAllSavings] = useState([]);
@@ -60,13 +52,12 @@ export function BalanceProvider( {children} ){
         allIncomes, //usado en Incomes
         setAllIncomes,
         handleAddIncome, //usado en myAccount
-        incomeBalance,
+        incomeBalance, // usado en myAccount
         setIncomeBalance,
-        // addToIncomeBalance, // Incomes, myAccount
 
         allSpent, //usado en Spending
         setAllSpent,
-        spentBalance,
+        spentBalance, //usado en myAccount
         setSpentBalance,
         handleAddToSpent, //usado en myAccount
 

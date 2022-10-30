@@ -46,6 +46,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
       handleAddToSpent,
       handleAddtoSavings,
       incomeBalance,
+      spentBalance,
     } = useContext(BalanceContext);
 
     return(
@@ -60,7 +61,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                 <div>
                     <div>
                         <Link to='/incomes'>
-                            <h3>Incomes: {incomeBalance}</h3>
+                            <h3>Incomes: ${incomeBalance}</h3>
                         </Link>
                     </div>
                     <div onClick={()=> setIncomesModalIsOpen(true)}>
@@ -74,7 +75,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                 <div>
                     <div>
                     <Link to='/spent'>
-                        <h3>Spent:</h3>
+                        <h3>Spent: ${spentBalance}</h3>
                     </Link>
                     </div>
                     <div onClick={()=> setSpentModalIsOpen(true)}>
@@ -92,7 +93,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                 <div>
                     <div>
                         <Link to='/savings'>
-                            <h3>Savings:</h3>
+                            <h3>Savings: $</h3>
                         </Link>
                     </div>
                     <div onClick={()=> setSavingsModalIsOpen(true)}>
