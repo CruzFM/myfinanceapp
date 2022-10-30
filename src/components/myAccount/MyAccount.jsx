@@ -35,6 +35,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
     incomeBalance,
     spentBalance,
     totalBalance,
+    savingsBalance
   } = useContext(BalanceContext);
 
   return (
@@ -85,7 +86,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
         <div>
           <div>
             <Link to="/savings">
-              <h3>Savings: $</h3>
+              <h3>Savings: ${savingsBalance}</h3>
             </Link>
           </div>
           <div onClick={() => setSavingsModalIsOpen(true)}>+</div>

@@ -43,10 +43,16 @@ export function BalanceProvider( {children} ){
   //Savings
   const [allSavings, setAllSavings] = useState([]);
 
-  const [savingsBalance, setSavingsBalance] = useState();
+  const [savingsBalance, setSavingsBalance] = useState(0);
 
   const handleAddtoSavings = (newSaving) => {
+    //Adds a new saving to the list of savings
     setAllSavings((prevAllSavings) => [...prevAllSavings, newSaving]);
+
+    //Adds the sum of the total savings to the savings balance.
+    //NOTE: the savings amount doesnt affect the total balance.
+    //TESTING
+    setSavingsBalance(prevSavingBalance => prevSavingBalance + newSaving.amount)
   };
 
   //To do: funnciones para poder crear los gastos.
