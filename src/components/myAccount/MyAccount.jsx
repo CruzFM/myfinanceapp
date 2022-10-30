@@ -1,5 +1,5 @@
 import "./myAccount.css";
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import Modal from "react-modal";
 import { FormAdd } from "../FormAdd/FormAdd";
@@ -39,8 +39,14 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
         'Goods'
     ]
 
-    const { setAllIncomes, allIncomes, handleAddIncome, handleAddToSpent, handleAddtoSavings } = useContext(BalanceContext);
-
+    const {
+      setAllIncomes,
+      allIncomes,
+      handleAddIncome,
+      handleAddToSpent,
+      handleAddtoSavings,
+      incomeBalance,
+    } = useContext(BalanceContext);
 
     return(
         <section className="myAccount">
@@ -54,7 +60,7 @@ export const MyAccount = ( {handleToggleDarkMode, isDarkMode} )=>{
                 <div>
                     <div>
                         <Link to='/incomes'>
-                            <h3>Incomes:</h3>
+                            <h3>Incomes: {incomeBalance}</h3>
                         </Link>
                     </div>
                     <div onClick={()=> setIncomesModalIsOpen(true)}>
