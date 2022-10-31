@@ -62,6 +62,16 @@
     border-radius: 8px;
 }
 
-.modal{
+/* .modal{
     padding: 20px 17px;
+} */
+
+.modal-btn{
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 5px 5px;
+    position: absolute;
+    top: 4%;
+    right: 7%;
 }

@@ -57,14 +57,14 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
           <Modal
             isOpen={incomesModalIsOpen}
             style={darkModeModal}
-            className="modal"
+            // className="modal"
           >
             <FormAdd
               category={incomesCategories}
               nameAdd="income"
               addNew={handleAddIncome}
             />
-            <button onClick={() => setIncomesModalIsOpen(false)}>Close</button>
+            <button className="modal-btn" onClick={() => setIncomesModalIsOpen(false)}>X</button>
           </Modal>
         </div>
         <div>
@@ -80,7 +80,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               nameAdd="spending"
               addNew={handleAddToSpent}
             />
-            <button onClick={() => setSpentModalIsOpen(false)}>Close</button>
+            <button className="modal-btn" onClick={() => setSpentModalIsOpen(false)}>X</button>
           </Modal>
         </div>
         <div>
@@ -96,7 +96,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               nameAdd="saving"
               addNew={handleAddtoSavings}
             />
-            <button onClick={() => setSavingsModalIsOpen(false)}>Close</button>
+            <button className="modal-btn" onClick={() => setSavingsModalIsOpen(false)}>X</button>
           </Modal>
         </div>
       </article>

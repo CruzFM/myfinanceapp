@@ -1,4 +1,4 @@
-import "../Incomes/incomes.style.css";
+
 import { Card } from "../Card/Card"
 import { useContext } from "react";
 import BalanceContext from "../../context/BalanceContext";

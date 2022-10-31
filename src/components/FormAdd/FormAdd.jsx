@@ -1,3 +1,4 @@
+import "./form.style.css";
 import { Formik, Form, Field, FormikProps, ErrorMessage  } from "formik";
 import * as Yup from 'yup';
 
@@ -31,7 +32,7 @@ export const FormAdd = (props)=> {
             >
                 { 
                 ( {touched, errors} ) =>
-                (<Form>
+                (<Form className="form">
                     <div>
                         <label htmlFor="amount">Amount</label>
                         <Field name='amount' type='number' placeholder='Example: 777' />
@@ -51,7 +52,7 @@ export const FormAdd = (props)=> {
                         {errors.detail && touched.detail && <div>{errors.detail}</div>}
                     </div>
                     <div>
-                        <label htmlFor="date">date</label>
+                        <label htmlFor="date">Date</label>
                         <Field name='date' type='date'  />
                         {errors.date && touched.date && <div>{errors.date}</div>}
                     </div>
