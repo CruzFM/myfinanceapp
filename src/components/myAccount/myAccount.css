@@ -75,3 +75,21 @@
     top: 4%;
     right: 7%;
 }
+
+@media screen and (min-width: 760px){
+    .myAccount--items{
+        flex-direction: row;
+        border: 1px solid blue;
+        height: 15rem;
+    }
+
+    .myAccount--items > div{
+        padding: 32px 27px;
+        width: 300px;
+    }
+
+    .myAccount--items > div > div{
+        display: grid;
+        place-items: center;
+    }
+}
