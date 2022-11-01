@@ -6,6 +6,7 @@ import {MyAccount } from "./components/myAccount/MyAccount"
 import {Incomes } from "./components/Incomes/Incomes"
 import {Spent } from "./components/Spent/Spent"
 import {Savings } from "./components/Savings/Savings"
+import { Navbar } from "./components/Navbar/Navbar"
 
 Modal.setAppElement('#root')
 function App() {
@@ -22,7 +23,7 @@ function App() {
     {/*<div className="App">
       <h1>Hola Fer, nueva app. no te retrases.</h1>
     </div>*/}
-
+    <Navbar />
     <Routes>
       <Route path="/" element={<MyAccount handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode}/>}/>
       <Route path="/incomes" element={<Incomes />}/>
