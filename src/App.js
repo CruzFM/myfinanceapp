@@ -23,9 +23,9 @@ function App() {
     {/*<div className="App">
       <h1>Hola Fer, nueva app. no te retrases.</h1>
     </div>*/}
-    <Navbar />
+    <Navbar handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode} />
     <Routes>
-      <Route path="/" element={<MyAccount handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode}/>}/>
+      <Route path="/" element={<MyAccount isDarkMode={isDarkMode} handleToggleDarkMode={handleToggleDarkMode} />}/>
       <Route path="/incomes" element={<Incomes />}/>
       <Route path="/spent" element={<Spent />}/>
       <Route path="/savings" element={<Savings />}/>
