@@ -28,6 +28,7 @@ export const FormAdd = (props)=> {
             onSubmit={(values) => {
                 // console.log(values)
                 props.addNew(values)
+                props.setModalIsOpen(false);
             }}
             >
                 { 

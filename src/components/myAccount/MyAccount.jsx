@@ -63,6 +63,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               category={incomesCategories}
               nameAdd="income"
               addNew={handleAddIncome}
+              setModalIsOpen={setIncomesModalIsOpen}
             />
             <button className="modal-btn" onClick={() => setIncomesModalIsOpen(false)}>X</button>
           </Modal>
@@ -79,6 +80,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               category={spentCategories}
               nameAdd="spending"
               addNew={handleAddToSpent}
+              setModalIsOpen={setSpentModalIsOpen}
             />
             <button className="modal-btn" onClick={() => setSpentModalIsOpen(false)}>X</button>
           </Modal>
@@ -95,6 +97,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               category={savingsCategories}
               nameAdd="saving"
               addNew={handleAddtoSavings}
+              setModalIsOpen={setSavingsModalIsOpen}
             />
             <button className="modal-btn" onClick={() => setSavingsModalIsOpen(false)}>X</button>
           </Modal>
