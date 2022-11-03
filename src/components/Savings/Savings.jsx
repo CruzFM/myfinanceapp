@@ -8,14 +8,16 @@ export const Savings = ()=>{
     const { allSavings } = useContext(BalanceContext);
 
     return(
-        <div>
-            <h1>Hola Fer, soy ahorros</h1>
-            <div className="card-wrap">
-                {allSavings.map(saving => {
-                    return(
-                        <Card data={saving} />
-                    )
-                })}
+        <div className="sections">
+            <div className="sections--container">
+                <h1>Hola Fer, soy ahorros</h1>
+                <div className="card-wrap">
+                    {allSavings.map(saving => {
+                        return(
+                            <Card data={saving} />
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

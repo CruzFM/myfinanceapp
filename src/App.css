@@ -53,6 +53,19 @@ button, a{
 }
 
 
+/*-----INCOMES / SAVINGS / SPENT STYLES -----------*/
+
+.sections{
+  min-height: 100vh;
+}
+
+.sections--container{
+  margin: 0 auto;
+  width: 90%;
+}
+
+/*----------------------------------------------*/
+
 @media screen and (min-width:760px) {
   .card-wrap{
     display: flex;

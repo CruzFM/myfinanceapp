@@ -13,11 +13,15 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
   const [savingsModalIsOpen, setSavingsModalIsOpen] = useState(false);
 
   const darkModeModal = {
-    overlay: isDarkMode === true && { backgroundColor: "black" },
-    content: isDarkMode === true && {
-      backgroundColor: "rgb(45, 40, 40)",
-      color: "white",
+    overlay: {
+      backgroundColor: isDarkMode === true ? "black" : "rgba(255, 255, 255, 0.75)",
     },
+    content: {
+      display: "flex",
+      justifyContent:"center",
+      backgroundColor: isDarkMode === true ? "rgb(45, 40, 40)" : "#fff",
+      color: isDarkMode === true ? "white" : "black",
+    }
   };
 
   const incomesCategories = ["Salary", "Investments", "Extras"];
