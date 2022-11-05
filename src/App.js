@@ -7,6 +7,7 @@ import {Incomes } from "./components/Incomes/Incomes"
 import {Spent } from "./components/Spent/Spent"
 import {Savings } from "./components/Savings/Savings"
 import { Navbar } from "./components/Navbar/Navbar"
+import { Footer } from './components/Footer/Footer';
 
 Modal.setAppElement('#root')
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Route path="/spent" element={<Spent />}/>
       <Route path="/savings" element={<Savings />}/>
     </Routes>
+    <Footer />
     
     </div>
   );

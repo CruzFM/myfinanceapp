@@ -1,5 +1,5 @@
 .myAccount{
-    height: 100vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,31 +32,40 @@
 
 .myAccount--items > div >div:nth-child(1){
     grid-column: 1 / 4;
-    border: 1px solid black;
-    border-radius: 8px;
+    /* border: 1px solid black; */
+    /* border-radius: 8px; */
     padding: 25px 15px;
 }
 .myAccount--items > div >div:nth-child(2){
     grid-column: 4 / 5;
-    border: 1px solid black;
-    border-radius: 8px;
+    /* border: 1px solid black; */
+    /* border-radius: 8px; */
     display: grid;
     place-items: center;
 }
 
 .myAccount--items > div:nth-child(1) > div{
     background-color: rgb(59, 136, 59);
-    border-radius: 8px;
+    box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    /* border-radius: 8px; */
 }
 
 .myAccount--items > div:nth-child(2) > div{
     background-color: rgb(153, 81, 81);
-    border-radius: 8px;
+    box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    /* border-radius: 8px; */
 }
 
 .myAccount--items > div:nth-child(3) > div{
     background-color: rgb(156, 150, 83);
-    border-radius: 8px;
+    box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+    /* border-radius: 8px; */
 }
 
 
@@ -99,6 +108,10 @@
 }
 
 @media screen and (min-width: 760px){
+
+    .myAccount{
+        min-height: 90vh;
+    }
     .myAccount--items{
         border: 0.5px solid rgb(185, 185, 185);
         border-radius: 15px;

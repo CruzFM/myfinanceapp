@@ -47,9 +47,6 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
       <article className="myAccount--balance">
         <h2>Balance: ${totalBalance}</h2>
       </article>
-      {/* <article onClick={handleToggleDarkMode}>
-        {isDarkMode === true ? "dark" : "white"}
-      </article> */}
       <article className="myAccount--items">
         <div>
           <div>
