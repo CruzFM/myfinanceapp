@@ -12,7 +12,7 @@ export const Incomes = ()=>{
     return(
         <div className="sections">
             <div className="sections--container">
-                <h1> Hola Fer, soy ingresos </h1>
+                <h1> Your incomes: </h1>
                 <div className="card-wrap">
                     {allIncomes.map(income => {
                         return(

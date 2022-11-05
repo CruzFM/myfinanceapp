@@ -9,7 +9,7 @@ export const Spent = ()=>{
     return(
         <div className="sections">   
             <div className="sections--container">
-                <h1> Hola Fer, soy Gastos </h1>
+                <h1> Your spendings: </h1>
                 <div className="card-wrap">
                     {allSpent.map(spending => {
                         return(

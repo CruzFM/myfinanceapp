@@ -10,7 +10,7 @@ export const Savings = ()=>{
     return(
         <div className="sections">
             <div className="sections--container">
-                <h1>Hola Fer, soy ahorros</h1>
+                <h1>Your savings:</h1>
                 <div className="card-wrap">
                     {allSavings.map(saving => {
                         return(

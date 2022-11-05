@@ -64,6 +64,11 @@ button, a{
   width: 90%;
 }
 
+.sections--container > h1{
+  padding: 10px;
+  text-align: center;
+}
+
 /*----------------------------------------------*/
 
 @media screen and (min-width:760px) {
