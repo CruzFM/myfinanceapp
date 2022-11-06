@@ -8,17 +8,17 @@ export const Navbar = ( {isDarkMode, handleToggleDarkMode} )=>{
     const changeDarkModeBtn = ()=>{
         if(isDarkMode === true){
             return(
-                <img src={lightModeBtn} style={{width: '20px'}} alt="lightMode"/>
+                <img src={lightModeBtn} style={{width: '20px', cursor:"pointer"}} alt="lightMode"/>
             )
         } else {
             return(
-                <img src={darkModeBtn} style={{width: '20px'}} alt="darkMode"/>
+                <img src={darkModeBtn} style={{width: '20px', cursor:"pointer"}} alt="darkMode"/>
             )
         }
     }
     return(
         <nav className="navbar">
-            <span><Link to="/">FinanceApp</Link></span>
+            <span><Link to="/"><strong>FinanceApp</strong></Link></span>
             <ul>
                 <li onClick={handleToggleDarkMode}>{changeDarkModeBtn()}</li>
                 <li><Link to="/incomes">Incomes</Link></li>

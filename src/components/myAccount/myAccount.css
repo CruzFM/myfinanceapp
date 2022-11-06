@@ -102,6 +102,10 @@
     border-radius: 50%;
 }
 
+.myAccount--items_add{
+    font-size: 1.85rem;
+}
+
 @media screen and (min-width: 760px){
 
     .myAccount{

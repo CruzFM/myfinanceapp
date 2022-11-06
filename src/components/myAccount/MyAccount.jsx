@@ -54,7 +54,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               <h3>Incomes: ${incomeBalance}</h3>
             </Link>
           </div>
-          <div onClick={() => setIncomesModalIsOpen(true)}>+</div>
+          <div className="myAccount--items_add" onClick={() => setIncomesModalIsOpen(true)}>+</div>
           <Modal
             isOpen={incomesModalIsOpen}
             style={darkModeModal}
@@ -75,7 +75,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               <h3>Spent: ${spentBalance}</h3>
             </Link>
           </div>
-          <div onClick={() => setSpentModalIsOpen(true)}>+</div>
+          <div className="myAccount--items_add"  onClick={() => setSpentModalIsOpen(true)}>+</div>
           <Modal isOpen={spentModalIsOpen} style={darkModeModal}>
             <FormAdd
               category={spentCategories}
@@ -92,7 +92,7 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
               <h3>Savings: ${savingsBalance}</h3>
             </Link>
           </div>
-          <div onClick={() => setSavingsModalIsOpen(true)}>+</div>
+          <div className="myAccount--items_add" onClick={() => setSavingsModalIsOpen(true)}>+</div>
           <Modal isOpen={savingsModalIsOpen} style={darkModeModal}>
             <FormAdd
               category={savingsCategories}
