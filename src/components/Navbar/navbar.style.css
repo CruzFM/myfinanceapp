@@ -20,3 +20,7 @@
 .navbar > ul > li{
     padding: 10px;
 }
+
+.navbar > ul > li:hover{
+    color: rgb(65, 65, 236);
+}

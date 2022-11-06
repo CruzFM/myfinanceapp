@@ -48,6 +48,9 @@
     -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
     -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
 }
+.myAccount--items > div:nth-child(1) > div:hover{
+    background-color: rgb(65, 105, 65);
+}
 
 .myAccount--items > div:nth-child(2) > div{
     background-color: rgb(153, 81, 81);
@@ -55,12 +58,19 @@
     -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
     -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
 }
+.myAccount--items > div:nth-child(2) > div:hover{
+    background-color: rgb(110, 42, 42);
+}
 
 .myAccount--items > div:nth-child(3) > div{
     background-color: rgb(156, 150, 83);
     box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
     -webkit-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
     -moz-box-shadow: 8px 9px 9px 0px rgba(173,168,168,0.75);
+}
+
+.myAccount--items > div:nth-child(3) > div:hover{
+    background-color: rgb(113, 107, 56);
 }
 
 
@@ -99,11 +109,15 @@
     position: absolute;
     top: 2%;
     right: 5%;
-    border-radius: 50%;
+    cursor: pointer;
+}
+.modal-btn:hover{
+    background-color: rgb(130, 66, 66);
 }
 
 .myAccount--items_add{
     font-size: 1.85rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 760px){

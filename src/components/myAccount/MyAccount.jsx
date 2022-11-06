@@ -1,11 +1,11 @@
 import "./myAccount.css";
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import {Link} from 'react-router-dom';
 import Modal from "react-modal";
 import { FormAdd } from "../FormAdd/FormAdd";
 import BalanceContext from "../../context/BalanceContext"
 
-export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
+export const MyAccount = ({isDarkMode }) => {
   const [incomesModalIsOpen, setIncomesModalIsOpen] = useState(false);
 
   const [spentModalIsOpen, setSpentModalIsOpen] = useState(false);
@@ -31,8 +31,6 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
   const savingsCategories = ["Vacation", "Goods"];
 
   const {
-    setAllIncomes,
-    allIncomes,
     handleAddIncome,
     handleAddToSpent,
     handleAddtoSavings,
@@ -58,7 +56,6 @@ export const MyAccount = ({ handleToggleDarkMode, isDarkMode }) => {
           <Modal
             isOpen={incomesModalIsOpen}
             style={darkModeModal}
-            // className="modal"
           >
             <FormAdd
               category={incomesCategories}
