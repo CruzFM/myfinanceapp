@@ -73,6 +73,12 @@ button, a{
   text-align: center;
 }
 
+.card-column-phone{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /*----------------------------------------------*/
 
 @media screen and (min-width:760px) {
