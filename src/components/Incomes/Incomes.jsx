@@ -7,7 +7,7 @@ import { Card } from "../Card/Card";
 
 export const Incomes = ()=>{
 
-    const {allIncomes} = useContext(BalanceContext)
+    const {allIncomes, setAllIncomes, setIncomeBalance, setTotalBalance} = useContext(BalanceContext)
 
     return(
         <div className="sections">
@@ -15,9 +15,15 @@ export const Incomes = ()=>{
                 <h1> Your incomes: </h1>
                 <div className="card-wrap">
                     {allIncomes.map(income => {
-                        return(
-                            <Card data={income} />
-                        )
+                        return (
+                          <Card
+                            data={income}
+                            array={allIncomes}
+                            setState={setAllIncomes}
+                            setItemBalance={setIncomeBalance}
+                            setTotalBalance={setTotalBalance}
+                          />
+                        );
                     })}
                 </div>
             </div>

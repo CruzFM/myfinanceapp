@@ -5,7 +5,7 @@ import BalanceContext from "../../context/BalanceContext";
 
 export const Savings = ()=>{
 
-    const { allSavings } = useContext(BalanceContext);
+    const { allSavings, setAllSavings, setSavingsBalance, setTotalBalance } = useContext(BalanceContext);
 
     return(
         <div className="sections">
@@ -14,7 +14,13 @@ export const Savings = ()=>{
                 <div className="card-wrap">
                     {allSavings.map(saving => {
                         return(
-                            <Card data={saving} />
+                            <Card 
+                                data={saving}
+                                array={allSavings}
+                                setState={setAllSavings}
+                                setItemBalance={setSavingsBalance}
+                                setTotalBalance={setTotalBalance}
+                            />
                         )
                     })}
                 </div>

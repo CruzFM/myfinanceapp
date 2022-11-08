@@ -55,35 +55,53 @@ export function BalanceProvider( {children} ){
     setSavingsBalance(prevSavingBalance => prevSavingBalance + newSaving.amount)
   };
 
-  //To do: funnciones para poder crear los gastos.
-  //detalle: el usuario deberia poder cargar sus gastos y estos deberian poder visualizarse en sus respectivos componentes como unas listas o cards.
-  //ademas: como no es una app con un backend, la realidad es que deberia poder setearlo en local storage. el local lo traeria. (idealmente)
-  //quizas: podriamos crear las categorias de gastos como: habituales o fijos, y como variables. mismo caso con los ingresos.
-  //los ahorros deberian quedar fuera del balance (quizas)
+  //DELETE ITEM --------------(saving, spending or income)
+
+  const deleteItem = (array, item, setState, setItemBalance, setTotalBalance) =>{
+    let itemIndex = array.indexOf(item);
+    let slicedOne = array.slice(0, itemIndex);
+    let slicedTwo = array.slice(itemIndex + 1);
+    let newArray = slicedOne.concat(slicedTwo);
+    let sumOrRestItem = (object) =>{
+      if( item.category === "Recurrent" || item.category === "Extra" ){
+        return item.amount * -1;
+      } else if(item.category === "Vacation" || item.category === "Goods"){
+        return 0;
+      } else{
+        return item.amount;
+      }
+    }
+    setState(newArray);
+    setItemBalance(prevItemBalance => prevItemBalance - item.amount);
+    setTotalBalance(prevTotalBalance => prevTotalBalance - sumOrRestItem(item));
+  }
+  //-----------------------------------------------------
 
   return (
     <BalanceContext.Provider
       value={{
         totalBalance, //myAccount
-        setTotalBalance,
+        setTotalBalance, // Incomes, Spent, Savings
 
         allIncomes, //usado en Incomes
         setAllIncomes,
         handleAddIncome, //usado en myAccount
-        incomeBalance, // usado en myAccount
-        setIncomeBalance,
+        incomeBalance, // usado en myAccount,
+        setIncomeBalance, // Card
 
         allSpent, //usado en Spending
         setAllSpent,
-        spentBalance, //usado en myAccount
-        setSpentBalance,
+        spentBalance, //usado en myAccount, Card
+        setSpentBalance, // usado en Card
         handleAddToSpent, //usado en myAccount
 
         allSavings, //usado en Savings
         setAllSavings,
         handleAddtoSavings, //usado en myAccount
-        savingsBalance,
-        setSavingsBalance,
+        savingsBalance, 
+        setSavingsBalance, // savings
+
+        deleteItem, // para usar en Card y MyAcc
       }}
     >
       {children}
