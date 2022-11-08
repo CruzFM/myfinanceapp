@@ -15,7 +15,7 @@ export const Card = (props) =>{
             <p>{props.data.detail}</p>
             <button 
                 onClick={ ()=> deleteItem(props.array, props.data, props.setState, props.setItemBalance, props.setTotalBalance)}
-                style={{backgroundColor: "red", color:"white", padding: "12px"}}
+                // style={{backgroundColor: "red", color:"white", padding: "8px"}}
             >X</button>
         </div>
     )
