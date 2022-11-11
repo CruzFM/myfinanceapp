@@ -52,18 +52,25 @@ export const MyAccount = ({isDarkMode }) => {
               <h3>Incomes: ${incomeBalance}</h3>
             </Link>
           </div>
-          <div className="myAccount--items_add" onClick={() => setIncomesModalIsOpen(true)}>+</div>
-          <Modal
-            isOpen={incomesModalIsOpen}
-            style={darkModeModal}
+          <div
+            className="myAccount--items_add"
+            onClick={() => setIncomesModalIsOpen(true)}
           >
+            +
+          </div>
+          <Modal isOpen={incomesModalIsOpen} style={darkModeModal}>
             <FormAdd
               category={incomesCategories}
               nameAdd="income"
               addNew={handleAddIncome}
               setModalIsOpen={setIncomesModalIsOpen}
             />
-            <button className="modal-btn" onClick={() => setIncomesModalIsOpen(false)}>X</button>
+            <button
+              className="modal-btn"
+              onClick={() => setIncomesModalIsOpen(false)}
+            >
+              X
+            </button>
           </Modal>
         </div>
         <div>
@@ -72,7 +79,12 @@ export const MyAccount = ({isDarkMode }) => {
               <h3>Spent: ${spentBalance}</h3>
             </Link>
           </div>
-          <div className="myAccount--items_add"  onClick={() => setSpentModalIsOpen(true)}>+</div>
+          <div
+            className="myAccount--items_add"
+            onClick={() => setSpentModalIsOpen(true)}
+          >
+            +
+          </div>
           <Modal isOpen={spentModalIsOpen} style={darkModeModal}>
             <FormAdd
               category={spentCategories}
@@ -80,7 +92,12 @@ export const MyAccount = ({isDarkMode }) => {
               addNew={handleAddToSpent}
               setModalIsOpen={setSpentModalIsOpen}
             />
-            <button className="modal-btn" onClick={() => setSpentModalIsOpen(false)}>X</button>
+            <button
+              className="modal-btn"
+              onClick={() => setSpentModalIsOpen(false)}
+            >
+              X
+            </button>
           </Modal>
         </div>
         <div>
@@ -89,7 +106,12 @@ export const MyAccount = ({isDarkMode }) => {
               <h3>Savings: ${savingsBalance}</h3>
             </Link>
           </div>
-          <div className="myAccount--items_add" onClick={() => setSavingsModalIsOpen(true)}>+</div>
+          <div
+            className="myAccount--items_add"
+            onClick={() => setSavingsModalIsOpen(true)}
+          >
+            +
+          </div>
           <Modal isOpen={savingsModalIsOpen} style={darkModeModal}>
             <FormAdd
               category={savingsCategories}
@@ -97,7 +119,12 @@ export const MyAccount = ({isDarkMode }) => {
               addNew={handleAddtoSavings}
               setModalIsOpen={setSavingsModalIsOpen}
             />
-            <button className="modal-btn" onClick={() => setSavingsModalIsOpen(false)}>X</button>
+            <button
+              className="modal-btn"
+              onClick={() => setSavingsModalIsOpen(false)}
+            >
+              X
+            </button>
           </Modal>
         </div>
       </article>

@@ -24,3 +24,22 @@
 .navbar > ul > li:hover{
     color: rgb(65, 65, 236);
 }
+
+.darkMode .mobileNav{
+    background-color: rgb(58, 56, 56);
+}
+.mobileNav{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px;
+    position: absolute;
+    top: 6%;
+    right: 0;
+    background-color: rgb(241, 244, 254);
+}
+
+.toggleMobileNav{
+    position: absolute;
+    right: 5%;
+}

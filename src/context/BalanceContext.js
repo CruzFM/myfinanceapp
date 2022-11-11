@@ -51,30 +51,37 @@ export function BalanceProvider( {children} ){
 
     //Adds the sum of the total savings to the savings balance.
     //NOTE: the savings amount doesnt affect the total balance.
-    //TESTING
     setSavingsBalance(prevSavingBalance => prevSavingBalance + newSaving.amount)
   };
 
   //DELETE ITEM --------------(saving, spending or income)
 
-  const deleteItem = (array, item, setState, setItemBalance, setTotalBalance) =>{
+  const deleteItem = (
+    array,
+    item,
+    setState,
+    setItemBalance,
+    setTotalBalance
+  ) => {
     let itemIndex = array.indexOf(item);
     let slicedOne = array.slice(0, itemIndex);
     let slicedTwo = array.slice(itemIndex + 1);
     let newArray = slicedOne.concat(slicedTwo);
-    let sumOrRestItem = (object) =>{
-      if( item.category === "Recurrent" || item.category === "Extra" ){
+    let sumOrRestItem = (object) => {
+      if (item.category === "Recurrent" || item.category === "Extra") {
         return item.amount * -1;
-      } else if(item.category === "Vacation" || item.category === "Goods"){
+      } else if (item.category === "Vacation" || item.category === "Goods") {
         return 0;
-      } else{
+      } else {
         return item.amount;
       }
-    }
+    };
     setState(newArray);
-    setItemBalance(prevItemBalance => prevItemBalance - item.amount);
-    setTotalBalance(prevTotalBalance => prevTotalBalance - sumOrRestItem(item));
-  }
+    setItemBalance((prevItemBalance) => prevItemBalance - item.amount);
+    setTotalBalance(
+      (prevTotalBalance) => prevTotalBalance - sumOrRestItem(item)
+    );
+  };
   //-----------------------------------------------------
 
   return (

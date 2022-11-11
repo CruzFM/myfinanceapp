@@ -15,7 +15,7 @@
     font-size: 14px;
 }
 
-.card >button{
+.card > button{
     position: absolute;
     top: 5px;
     right: 5%;
