@@ -15,6 +15,24 @@
     border-radius: 5px;
 }
 
+.errors{
+    color: red;
+    font-size: 14px;
+}
+.form--submitBtn{
+    padding: 10px 13px;
+    border: 0.5px solid blue;
+    color: blue;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.form--submitBtn:hover{
+    border: 1px solid black;
+    color: white;
+    background-color: blue;
+}
+
 @media screen and (min-width: 760px) {
     .form{
         width: 400px;
