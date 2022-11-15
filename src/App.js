@@ -21,9 +21,6 @@ function App() {
   return (
 
     <div className={isDarkMode ===true ? 'darkMode' : ''}>
-    {/*<div className="App">
-      <h1>Hola Fer, nueva app. no te retrases.</h1>
-    </div>*/}
     <Navbar handleToggleDarkMode={handleToggleDarkMode} isDarkMode={isDarkMode} />
     <Routes>
       <Route path="/" element={<MyAccount isDarkMode={isDarkMode} handleToggleDarkMode={handleToggleDarkMode} />}/>
