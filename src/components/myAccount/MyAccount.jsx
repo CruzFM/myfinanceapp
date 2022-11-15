@@ -5,7 +5,7 @@ import Modal from "react-modal";
 import { FormAdd } from "../FormAdd/FormAdd";
 import BalanceContext from "../../context/BalanceContext"
 
-export const MyAccount = ({isDarkMode }) => {
+export const MyAccount = ({ isDarkMode }) => {
   const [incomesModalIsOpen, setIncomesModalIsOpen] = useState(false);
 
   const [spentModalIsOpen, setSpentModalIsOpen] = useState(false);
@@ -14,14 +14,15 @@ export const MyAccount = ({isDarkMode }) => {
 
   const darkModeModal = {
     overlay: {
-      backgroundColor: isDarkMode === true ? "black" : "rgba(255, 255, 255, 0.75)",
+      backgroundColor:
+        isDarkMode === true ? "black" : "rgba(255, 255, 255, 0.75)",
     },
     content: {
       display: "flex",
-      justifyContent:"center",
+      justifyContent: "center",
       backgroundColor: isDarkMode === true ? "rgb(45, 40, 40)" : "#fff",
       color: isDarkMode === true ? "white" : "black",
-    }
+    },
   };
 
   const incomesCategories = ["Salary", "Investments", "Extras"];
@@ -37,7 +38,7 @@ export const MyAccount = ({isDarkMode }) => {
     incomeBalance,
     spentBalance,
     totalBalance,
-    savingsBalance
+    savingsBalance,
   } = useContext(BalanceContext);
 
   return (
